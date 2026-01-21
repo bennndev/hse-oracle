@@ -1,0 +1,21 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: laravel-app
+        container_name: laravel-app
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "80:80"
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - laravel-network
+        env_file:
+            - .env
+
+networks:
+    laravel-network:
+        driver: bridge
