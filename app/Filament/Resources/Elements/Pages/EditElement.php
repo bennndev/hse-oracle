@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Filament\Resources\Elements\Pages;
+
+use App\Filament\Resources\Elements\ElementResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditElement extends EditRecord
+{
+    protected static string $resource = ElementResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            ViewAction::make(),
+            DeleteAction::make(),
+        ];
+    }
+}
