@@ -20,6 +20,8 @@ class TrainingAttendanceResource extends Resource
 {
     protected static ?string $model = TrainingAttendance::class;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'fecha_inicio';

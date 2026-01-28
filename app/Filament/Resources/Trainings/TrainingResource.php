@@ -20,6 +20,10 @@ class TrainingResource extends Resource
 {
     protected static ?string $model = Training::class;
 
+    protected static ?string $modelLabel = 'Capacitación';
+    protected static ?string $pluralModelLabel = 'Capacitaciones';
+    protected static ?string $navigationLabel = 'Capacitaciones';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'titulo';

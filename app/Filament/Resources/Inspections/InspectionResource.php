@@ -20,6 +20,10 @@ class InspectionResource extends Resource
 {
     protected static ?string $model = Inspection::class;
 
+    protected static ?string $modelLabel = 'Inspección';
+    protected static ?string $pluralModelLabel = 'Inspecciones';
+    protected static ?string $navigationLabel = 'Inspecciones';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'mes';

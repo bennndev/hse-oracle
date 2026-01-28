@@ -20,6 +20,10 @@ class ProgramResource extends Resource
 {
     protected static ?string $model = Program::class;
 
+    protected static ?string $modelLabel = 'Programa';
+    protected static ?string $pluralModelLabel = 'Programas';
+    protected static ?string $navigationLabel = 'Programas';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'codigo';

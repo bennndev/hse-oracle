@@ -20,6 +20,8 @@ class ReportResource extends Resource
 {
     protected static ?string $model = Report::class;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'fecha';

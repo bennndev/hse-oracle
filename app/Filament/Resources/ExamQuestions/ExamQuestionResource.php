@@ -20,6 +20,8 @@ class ExamQuestionResource extends Resource
 {
     protected static ?string $model = ExamQuestion::class;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'pregunta';
