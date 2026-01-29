@@ -3,24 +3,26 @@
 namespace App\Filament\Resources\Activities\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 
 class ActivityForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema->components([
-            \Filament\Forms\Components\TextInput::make('codigo')
+            TextInput::make('codigo')
                 ->label('Código de Actividad')
                 ->required()
                 ->unique(ignoreRecord: true)
                 ->placeholder('ej. ACT-001'),
 
-            \Filament\Forms\Components\TextInput::make('nombre')
+            TextInput::make('nombre')
                 ->label('Nombre de la Actividad')
                 ->required()
                 ->placeholder('ej. Charla de 5 minutos'),
 
-            \Filament\Forms\Components\Select::make('frecuencia')
+            Select::make('frecuencia')
                 ->label('Frecuencia de Ejecución')
                 ->options([
                     'diario' => 'Diario',
@@ -31,7 +33,7 @@ class ActivityForm
                 ->required()
                 ->native(false),
 
-            \Filament\Forms\Components\Select::make('location_id')
+            Select::make('location_id')
                 ->label('Ubicación / Sede')
                 ->relationship('location', 'nombre')
                 ->required()
