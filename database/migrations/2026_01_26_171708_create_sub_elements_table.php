@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('element_types', function (Blueprint $table) {
+        Schema::create('sub_elements', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50); // 'documento', 'capacitacion', 'inspeccion'
+            $table->string('nombre', 255);
             $table->text('descripcion')->nullable();
             $table->timestamps();
         });
@@ -18,6 +18,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('element_types');
+        Schema::dropIfExists('sub_elements');
     }
 };

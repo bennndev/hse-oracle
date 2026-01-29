@@ -10,9 +10,6 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sub_element_id')
-                ->constrained('sub_elements')
-                ->onDelete('cascade');
             $table->string('codigo', 20)->unique(); // "1.1", "A.1", "3.5"
             $table->string('nombre', 255);
             $table->text('descripcion')->nullable();

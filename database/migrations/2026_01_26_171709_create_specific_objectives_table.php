@@ -10,9 +10,6 @@ return new class extends Migration
     {
         Schema::create('specific_objectives', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('element_id')
-                ->constrained('elements')
-                ->onDelete('cascade');
             $table->string('nombre', 255);
             $table->text('descripcion')->nullable();
             $table->timestamps();

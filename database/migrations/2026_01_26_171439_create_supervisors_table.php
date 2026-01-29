@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('supervisors', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 150);
-            $table->string('firma', 255)->nullable();
+            $table->longText('firma')->nullable();
             $table->timestamps();
         });
     }
