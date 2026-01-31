@@ -38,7 +38,9 @@ class ActivityForm
                 ->relationship('location', 'nombre')
                 ->required()
                 ->searchable()
-                ->preload(),
+                ->preload()
+                ->key('location_select')
+                ->createOptionForm(fn (Schema $schema) => \App\Filament\Resources\Locations\Schemas\LocationForm::configure($schema)->getComponents()),
         ]);
     }
 }
