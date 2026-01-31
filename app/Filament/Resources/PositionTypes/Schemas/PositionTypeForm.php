@@ -10,7 +10,11 @@ class PositionTypeForm
     {
         return $schema
             ->components([
-                //
+                \Filament\Forms\Components\TextInput::make('nombre')
+                    ->required()
+                    ->maxLength(100),
+                \Filament\Forms\Components\Textarea::make('descripcion')
+                    ->columnSpanFull(),
             ]);
     }
 }
