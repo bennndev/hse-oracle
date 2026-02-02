@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Exams\Pages;
 
 use App\Filament\Resources\Exams\ExamResource;
 use Filament\Actions\DeleteAction;
-use Filament\Actions\ViewAction;
+
 use Filament\Resources\Pages\EditRecord;
 
 class EditExam extends EditRecord
@@ -14,7 +14,7 @@ class EditExam extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
+
             DeleteAction::make(),
         ];
     }

@@ -5,9 +5,7 @@ namespace App\Filament\Resources\ExamQuestions;
 use App\Filament\Resources\ExamQuestions\Pages\CreateExamQuestion;
 use App\Filament\Resources\ExamQuestions\Pages\EditExamQuestion;
 use App\Filament\Resources\ExamQuestions\Pages\ListExamQuestions;
-use App\Filament\Resources\ExamQuestions\Pages\ViewExamQuestion;
 use App\Filament\Resources\ExamQuestions\Schemas\ExamQuestionForm;
-use App\Filament\Resources\ExamQuestions\Schemas\ExamQuestionInfolist;
 use App\Filament\Resources\ExamQuestions\Tables\ExamQuestionsTable;
 use App\Models\ExamQuestion;
 use BackedEnum;
@@ -29,10 +27,6 @@ class ExamQuestionResource extends Resource
         return ExamQuestionForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return ExamQuestionInfolist::configure($schema);
-    }
 
     public static function table(Table $table): Table
     {
@@ -51,7 +45,7 @@ class ExamQuestionResource extends Resource
         return [
             'index' => ListExamQuestions::route('/'),
             'create' => CreateExamQuestion::route('/create'),
-            'view' => ViewExamQuestion::route('/{record}'),
+
             'edit' => EditExamQuestion::route('/{record}/edit'),
         ];
     }
